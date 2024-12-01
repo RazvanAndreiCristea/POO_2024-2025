@@ -20,6 +20,9 @@ public:
 	NodStiva<T>* getNext() const;
 };
 
+template<typename T>
+std::ostream& operator<<(std::ostream& out, const Stiva<T>& stiva);
+
 template <typename T>
 class Stiva
 {
@@ -39,7 +42,5 @@ public:
 	void push(const T& info);
 
 	T* toVector() const;
-
-	template<typename T>
-	friend std::ostream& operator<<(std::ostream& out, const Stiva<T>& stiva);
+	friend std::ostream& operator<< <>(std::ostream& out, const Stiva& stiva);
 };
